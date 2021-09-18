@@ -16,6 +16,9 @@ read repo
 sudo timedatectl set-timezone Asia/Taipei
 
 # Install Tool
+sudo apt update
+sudo apt -y upgrade
+sudo apt -y autoremove
 sudo apt-get install git-all
 sudo apt install nodejs npm
 
