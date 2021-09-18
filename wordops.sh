@@ -1,15 +1,15 @@
 # Get information
-echo "Staging site url:"
+echo "1.Staging site url:"
 read staging_url
-echo "Staging admin user:"
+echo "2.Staging admin user:"
 read staging_user
-echo "Staging admin password:"
+echo "3.Staging admin password:"
 read staging_pass
-echo "Staging admin email:"
+echo "4.Staging admin email:"
 read staging_email
-echo "Plugin name:"
+echo "5.Plugin name:"
 read plugin_name
-echo "Git clone url:"
+echo "6.Git clone url:"
 read repo
 
 # Set timezone
