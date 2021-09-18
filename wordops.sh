@@ -1,6 +1,12 @@
 # Get information
 echo "Staging site url:"
 read staging_url
+echo "Staging admin user:"
+read staging_user
+echo "Staging admin password:"
+read staging_pass
+echo "Staging admin email:"
+read staging_email
 echo "Plugin name:"
 read plugin_name
 echo "Git clone url:"
@@ -16,7 +22,7 @@ sudo apt -y install composer
 
 # Install WordOps
 wget -qO wo wops.cc && sudo bash wo --force
-wo site create "$staging_url" --wp --user=oberon --pass=oberon615926 --email=m615926@gmail.com --letsencrypt
+wo site create "$staging_url" --wp --user="$staging_user" --pass="$staging_pass" --email="$staging_email" --letsencrypt
 wo site cd "$staging_url"
 cd htdocs
 
