@@ -10,21 +10,18 @@ read repo
 sudo timedatectl set-timezone Asia/Taipei
 
 # Install Tool
-sudo apt update
-expect {Do you want to continue} { send "n\n" }
-expect {Do you want to continue} { send "n\n" }
-expect {Do you want to continue} { send "n\n" }
-sudo apt-get install git-all
-sudo apt install nodejs npm
+sudo apt -y install git-all
+sudo apt -y install nodejs npm
+sudo apt -y install composer
 
 # Install WordOps
 wget -qO wo wops.cc && sudo bash wo --force
-wo stack install --wpcli
-wo stack install --composer
 wo site create "$staging_url" --wp --user=oberon --pass=oberon615926 --email=m615926@gmail.com --letsencrypt
 wo site cd "$staging_url"
+cd htdocs
 
 # Install plugins and themes
+usermod --shell /bin/bash www-data
 su www-data
 wp language core install zh_TW
 wp language core activate zh_TW
@@ -35,7 +32,7 @@ wp language plugin install woocommerce zh_TW
 wp theme install storefront
 wp language theme install storefront zh_TW
 wp theme activate storefront
-cd htdoc/wp-content/plugins
+cd wp-content/plugins
 git clone "$repo"
 cd "$plugin_name"
 composer install
