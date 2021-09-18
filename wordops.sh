@@ -11,9 +11,9 @@ sudo timedatectl set-timezone Asia/Taipei
 
 # Install Tool
 sudo apt update
-sudo apt -y upgrade
-sudo apt -y autoremove
-expect {Do you want to continue} { send "Y\n" }
+expect {Do you want to continue} { send "n\n" }
+expect {Do you want to continue} { send "n\n" }
+expect {Do you want to continue} { send "n\n" }
 sudo apt-get install git-all
 sudo apt install nodejs npm
 
@@ -21,8 +21,8 @@ sudo apt install nodejs npm
 wget -qO wo wops.cc && sudo bash wo --force
 wo stack install --wpcli
 wo stack install --composer
-wo site create "$staging_url" --wp --user=oberon --pass=oberon615926 --email=m615926@gmail.com
-wo site cd "$staging_url" --letsencrypt
+wo site create "$staging_url" --wp --user=oberon --pass=oberon615926 --email=m615926@gmail.com --letsencrypt
+wo site cd "$staging_url"
 
 # Install plugins and themes
 su www-data
