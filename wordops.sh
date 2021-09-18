@@ -1,12 +1,6 @@
 # Get information
 echo "Staging site url:"
 read staging_url
-echo "Staging site email:"
-read staging_email
-echo "Staging site username:"
-read staging_username
-echo "Staging site password:"
-read staging_password
 echo "Plugin name:"
 read plugin_name
 echo "Git clone url:"
@@ -19,6 +13,7 @@ sudo timedatectl set-timezone Asia/Taipei
 sudo apt update
 sudo apt -y upgrade
 sudo apt -y autoremove
+expect {Do you want to continue} { send "Y\n" }
 sudo apt-get install git-all
 sudo apt install nodejs npm
 
@@ -26,7 +21,7 @@ sudo apt install nodejs npm
 wget -qO wo wops.cc && sudo bash wo --force
 wo stack install --wpcli
 wo stack install --composer
-wo site create "$staging_url" --wp --user="$staging_username" --pass="$staging_password" --email=
+wo site create "$staging_url" --wp --user=oberon --pass=oberon615926 --email=m615926@gmail.com
 wo site cd "$staging_url" --letsencrypt
 
 # Install plugins and themes
