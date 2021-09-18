@@ -75,3 +75,10 @@ wp theme activate storefront
 #ufw allow 110
 
 echo "Staging Completed"
+
+sudo lemper-cli create -u ${USER} -d example.test -f wordpress -w ${HOME}/webapps/example.test --ipv4=127.0.10.1 --install-app
+
+
+linode-cli linodes create --root_pass linode615926
+
+sudo lemper-cli create -u lemper -d example.test -f wordpress -w ./var/www/example.test --install-app
