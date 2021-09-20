@@ -16,6 +16,10 @@ read repo
 sudo timedatectl set-timezone Asia/Taipei
 
 # Install Tool
+sudo apt update
+sudo apt -y upgrade
+sudo apt -y autoremove
+
 sudo apt -y install git-all
 sudo apt -y install nodejs npm
 sudo apt -y install composer
