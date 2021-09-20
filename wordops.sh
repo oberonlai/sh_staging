@@ -19,8 +19,7 @@ sudo timedatectl set-timezone Asia/Taipei
 wget -qO wo wops.cc && sudo bash wo --force
 wo stack upgrade --nginx
 wo site create "$staging_url" --wp --user="$staging_user" --pass="$staging_pass" --email="$staging_email" --letsencrypt
-wo site cd "$staging_url"
-cd htdocs
+cd /var/www/"$staging_url"/htdocs
 
 # Install plugins and themes
 wp language core install zh_TW --allow-root
