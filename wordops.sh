@@ -28,6 +28,7 @@ wp option update timezone_string "Asia/Taipei" --allow-root
 wp site switch-language zh_TW --allow-root
 wp plugin install woocommerce --allow-root
 wp language plugin install woocommerce zh_TW --allow-root
+wp plugin activate woocommerce zh_TW --allow-root
 wp theme install storefront --allow-root
 wp language theme install storefront zh_TW --allow-root
 wp theme activate storefront --allow-root
