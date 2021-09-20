@@ -48,4 +48,3 @@ cd "$plugin_name"
 composer install
 npm install
 echo "Staging build successfully!"
-
