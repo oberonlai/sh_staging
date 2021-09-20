@@ -23,7 +23,6 @@ wo site cd "$staging_url"
 cd htdocs
 
 # Install plugins and themes
-usermod --shell /bin/bash www-data
 wp language core install zh_TW --allow-root
 wp language core activate zh_TW --allow-root
 wp option update timezone_string "Asia/Taipei" --allow-root
@@ -47,4 +46,5 @@ git clone "$repo"
 cd "$plugin_name"
 composer install
 npm install
+usermod --shell /bin/bash www-data
 echo "Staging build successfully!"
