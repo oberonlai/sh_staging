@@ -15,6 +15,12 @@ read repo
 # Set timezone
 sudo timedatectl set-timezone Asia/Taipei
 
+
+# Install WordOps
+wget -qO wo wops.cc && sudo bash wo --force
+wo stack upgrade --nginx
+wo site create "$staging_url" --wp --user="$staging_user" --pass="$staging_pass" --email="$staging_email" --letsencrypt
+
 # Install Tool
 sudo apt update
 sudo apt -y upgrade
@@ -24,9 +30,6 @@ sudo apt -y install git-all
 sudo apt -y install nodejs npm
 sudo apt -y install composer
 
-# Install WordOps
-wget -qO wo wops.cc && sudo bash wo --force
-wo site create "$staging_url" --wp --user="$staging_user" --pass="$staging_pass" --email="$staging_email" --letsencrypt --php74
 wo site cd "$staging_url"
 cd htdocs
 
