@@ -15,7 +15,6 @@ read repo
 # Set timezone
 sudo timedatectl set-timezone Asia/Taipei
 
-
 # Install WordOps
 wget -qO wo wops.cc && sudo bash wo --force
 wo stack upgrade --nginx
